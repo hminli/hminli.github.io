@@ -86,9 +86,8 @@ const SITE_DATA = {
       ],
     },
    {
-      title: "Teacher Market Competition and the Development of Human Capital",
+      title: "Teacher Market Competition and the Development of Human Capital (sole-authored)",
       url: "",
-      status: "sole-authored",
       coauthors: [
       ],
     },
