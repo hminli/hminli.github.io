@@ -18,9 +18,10 @@ const SITE_DATA = {
   // 主页简介 — 每个字符串是一段
   // ============================================================
   bio: [
-    "I am a Ph.D. student in Economics at Wuhan University, China, and will be on the job market in 2026–2027.", 
-    "My research lies at two different fields: (i) 
-    the environmental economics, labor economics, and development economics.",
+    "I am a Ph.D. student in Economics at Wuhan University, China, and will be on the job market in 2026–2027."+ 
+    "My research lies in environmental economics, labor economics, and development economics."+ 
+    "Specifically, I am interested in two different questions: (i) the effectiveness of water allocation along a river and local behavior (my Ph.D. thesis),"+ 
+    "and (ii) human capital accumulation in developing countries.",
   ],
 
   // ============================================================
