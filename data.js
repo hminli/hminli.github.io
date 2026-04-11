@@ -6,11 +6,10 @@ const SITE_DATA = {
   info: {
     name_en:        "Haomin LI",
     name_zh:        "李浩民",
-    position:       "Ph.D. Candidate",
+    position:       "Ph.D. Student",
     department:     "Department of Economics",
-    university:     "[University Name]",
-    email:          "yourname@university.edu",
-    google_scholar: "https://scholar.google.com/",
+    university:     "Wuhan University",
+    email:          "haominli.ec@gmail.com",
     cv_pdf:         "assets/cv.pdf",
     last_updated:   "April 2026",
   },
@@ -19,9 +18,8 @@ const SITE_DATA = {
   // 主页简介 — 每个字符串是一段
   // ============================================================
   bio: [
-    "I am a Ph.D. candidate in Economics at [University Name]. My research lies at the intersection of environmental economics, labor economics, and development economics, with a focus on China.",
-    "I study how environmental policies shape labor markets and household welfare in developing countries, with particular attention to distributional effects and policy design.",
-    "I will be on the job market in 2025–2026. My job market paper examines [brief description].",
+    "I am a Ph.D. student in Economics at Wuhan University. My research lies at the environmental economics, labor economics, and development economics.",
+    "I will be on the job market in 2026–2027.",
   ],
 
   // ============================================================
