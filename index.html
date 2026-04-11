@@ -56,8 +56,7 @@
   document.getElementById('bio').innerHTML = SITE_DATA.bio.map(p => '<p>' + p + '</p>').join('');
   document.getElementById('contact').innerHTML =
     '<div><strong>Email</strong> &nbsp;&nbsp; ' + i.email + '</div>' +
-    '<div><strong>Office</strong> &nbsp; ' + i.department + ', ' + i.university + '</div>' +
-    '<a href="' + i.cv_pdf + '" target="_blank">Curriculum Vitae</a>';
+    '<div><strong>Office</strong> &nbsp; ' + i.department + ', ' + i.university + '</div>';
   const img = new Image();
   img.src = 'assets/img/profile-pic.jpg';
   img.alt = i.name_en;
