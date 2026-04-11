@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title"></title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --black:#1a1a1a; --gray:#555; --light-gray:#999; --border:#ddd; --bg:#fafaf8; --link:#2a5db0; }
+    body { font-family:'EB Garamond',Georgia,serif; font-size:17px; line-height:1.75; color:var(--black); background:var(--bg); max-width:760px; margin:0 auto; padding:0 32px; }
+    nav { display:flex; align-items:baseline; gap:28px; padding:40px 0 36px; border-bottom:1px solid var(--border); margin-bottom:52px; }
+    .nav-name { font-size:18px; font-weight:500; margin-right:auto; color:var(--black); text-decoration:none; }
+    nav a { font-family:'Inter',sans-serif; font-size:13px; font-weight:300; letter-spacing:0.08em; text-transform:uppercase; color:var(--gray); text-decoration:none; transition:color 0.15s; }
+    nav a:hover, nav a.active { color:var(--black); }
+    nav a.active { font-weight:400; }
+    .profile { display:grid; grid-template-columns:1fr 200px; gap:52px; align-items:start; }
+    .profile-text h1 { font-size:28px; font-weight:500; margin-bottom:4px; line-height:1.2; }
+    .subtitle { font-family:'Inter',sans-serif; font-size:13px; font-weight:300; color:var(--light-gray); letter-spacing:0.06em; text-transform:uppercase; margin-bottom:28px; }
+    .profile-text p { margin-bottom:16px; color:#333; }
+    .profile-text a { color:var(--link); text-decoration:none; border-bottom:1px solid transparent; transition:border-color 0.15s; }
+    .profile-text a:hover { border-bottom-color:var(--link); }
+    .profile-img img { width:100%; display:block; }
+    .photo-placeholder { width:100%; height:260px; background:#e8e4de; display:flex; align-items:center; justify-content:center; font-family:'Inter',sans-serif; font-size:12px; color:var(--light-gray); }
+    .contact-block { margin-top:36px; padding-top:28px; border-top:1px solid var(--border); font-family:'Inter',sans-serif; font-size:13px; font-weight:300; color:var(--gray); line-height:2; }
+    .contact-block a { color:var(--link); text-decoration:none; }
+    .contact-block a:hover { text-decoration:underline; }
+    footer { margin:80px 0 48px; padding-top:28px; border-top:1px solid var(--border); font-family:'Inter',sans-serif; font-size:12px; color:var(--light-gray); font-weight:300; }
+    @media (max-width:600px) { .profile { grid-template-columns:1fr; } .profile-img { order:-1; max-width:160px; } }
+  </style>
+</head>
+<body>
+<nav id="nav"></nav>
+<div class="profile">
+  <div class="profile-text">
+    <h1 id="name"></h1>
+    <p class="subtitle" id="subtitle"></p>
+    <div id="bio"></div>
+    <div class="contact-block" id="contact"></div>
+  </div>
+  <div class="profile-img" id="photo-wrap"></div>
+</div>
+<footer id="footer"></footer>
+<script src="data.js"></script>
+<script>
+  const i = SITE_DATA.info;
+  document.getElementById('page-title').textContent = i.name_en + ' (' + i.name_zh + ')';
+  document.getElementById('nav').innerHTML =
+    '<a href="index.html" class="nav-name">' + i.name_en + ' (' + i.name_zh + ')</a>' +
+    '<a href="index.html" class="active">Home</a>' +
+    '<a href="research.html">Research</a>' +
+    '<a href="cv.html">CV</a>';
+  document.getElementById('name').textContent = i.name_en + ' (' + i.name_zh + ')';
+  document.getElementById('subtitle').textContent = i.position + ' · Economics';
+  document.getElementById('bio').innerHTML = SITE_DATA.bio.map(p => '<p>' + p + '</p>').join('');
+  document.getElementById('contact').innerHTML =
+    '<div><strong>Email</strong> &nbsp;&nbsp; ' + i.email + '</div>' +
+    '<div><strong>Office</strong> &nbsp; ' + i.department + ', ' + i.university + '</div>' +
+    '<div style="margin-top:10px;"><a href="' + i.cv_pdf + '" target="_blank">Curriculum Vitae</a> &nbsp;·&nbsp; <a href="' + i.google_scholar + '" target="_blank">Google Scholar</a></div>';
+  const img = new Image();
+  img.src = 'assets/img/profile-pic.jpg';
+  img.alt = i.name_en;
+  img.style.width = '100%';
+  img.onerror = function() {
+    document.getElementById('photo-wrap').innerHTML = '<div class="photo-placeholder">Photo</div>';
+  };
+  document.getElementById('photo-wrap').appendChild(img);
+  document.getElementById('footer').textContent = i.name_en + ' · ' + i.university + ' · Last updated ' + i.last_updated;
+</script>
+</body>
+</html>
