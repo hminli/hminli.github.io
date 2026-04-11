@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title"></title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    :root { --black:#1a1a1a; --gray:#555; --light-gray:#999; --border:#ddd; --bg:#fafaf8; --link:#2a5db0; }
+    body { font-family:'EB Garamond',Georgia,serif; font-size:17px; line-height:1.75; color:var(--black); background:var(--bg); max-width:760px; margin:0 auto; padding:0 32px; }
+    nav { display:flex; align-items:baseline; gap:28px; padding:40px 0 36px; border-bottom:1px solid var(--border); margin-bottom:52px; }
+    .nav-name { font-size:18px; font-weight:500; margin-right:auto; color:var(--black); text-decoration:none; }
+    nav a { font-family:'Inter',sans-serif; font-size:13px; font-weight:300; letter-spacing:0.08em; text-transform:uppercase; color:var(--gray); text-decoration:none; transition:color 0.15s; }
+    nav a:hover, nav a.active { color:var(--black); }
+    nav a.active { font-weight:400; }
+    .cv-header { margin-bottom:44px; }
+    .cv-header p { color:var(--gray); font-size:16px; margin-bottom:14px; }
+    .cv-download { display:inline-block; font-family:'Inter',sans-serif; font-size:12px; font-weight:400; letter-spacing:0.08em; text-transform:uppercase; color:var(--link); text-decoration:none; border:1px solid #b0c4e8; padding:8px 20px; transition:background 0.15s, color 0.15s; }
+    .cv-download:hover { background:var(--link); color:white; }
+    section { margin-bottom:44px; }
+    section h2 { font-family:'Inter',sans-serif; font-size:11px; font-weight:400; letter-spacing:0.14em; text-transform:uppercase; color:var(--light-gray); margin-bottom:20px; padding-bottom:10px; border-bottom:1px solid var(--border); }
+    .cv-row { display:grid; grid-template-columns:100px 1fr; gap:8px 24px; margin-bottom:14px; align-items:baseline; }
+    .cv-year { font-family:'Inter',sans-serif; font-size:13px; font-weight:300; color:var(--light-gray); text-align:right; padding-top:2px; }
+    .cv-detail strong { font-weight:500; display:block; line-height:1.35; }
+    .cv-detail span, .cv-detail em { font-size:15.5px; color:var(--gray); }
+    .cv-detail em { font-style:italic; }
+    .fields { color:#333; }
+    footer { margin:60px 0 48px; padding-top:28px; border-top:1px solid var(--border); font-family:'Inter',sans-serif; font-size:12px; color:var(--light-gray); font-weight:300; }
+    @media (max-width:500px) { .cv-row { grid-template-columns:70px 1fr; } }
+  </style>
+</head>
+<body>
+<nav id="nav"></nav>
+<div id="content"></div>
+<footer id="footer"></footer>
+<script src="data.js"></script>
+<script>
+  const i = SITE_DATA.info;
+
+  document.getElementById('page-title').textContent = 'CV — ' + i.name_en;
+  document.getElementById('nav').innerHTML =
+    '<a href="index.html" class="nav-name">' + i.name_en + ' (' + i.name_zh + ')</a>' +
+    '<a href="index.html">Home</a>' +
+    '<a href="research.html">Research</a>' +
+    '<a href="cv.html" class="active">CV</a>';
+  document.getElementById('footer').textContent = i.name_en + ' · Last updated ' + i.last_updated;
+
+  document.getElementById('content').innerHTML =
+    '<div class="cv-header">' +
+    '<p>You can download my CV below.</p>' +
+    '<a href="' + i.cv_pdf + '" class="cv-download" target="_blank">Download CV (PDF)</a>' +
+    '</div>';
+</script>
+</body>
+</html>
