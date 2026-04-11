@@ -18,8 +18,9 @@ const SITE_DATA = {
   // 主页简介 — 每个字符串是一段
   // ============================================================
   bio: [
-    "I am a Ph.D. student in Economics at Wuhan University. My research lies at the environmental economics, labor economics, and development economics.",
-    "I will be on the job market in 2026–2027.",
+    "I am a Ph.D. student in Economics at Wuhan University, China, and will be on the job market in 2026–2027.", 
+    "My research lies at two different fields: (i) 
+    the environmental economics, labor economics, and development economics.",
   ],
 
   // ============================================================
@@ -81,6 +82,13 @@ const SITE_DATA = {
         { name: "Zhi Luo",    url: "https://ems.whu.edu.cn/info/1680/10590.htm" },
         { name: "Guanhua Yi", url: "" },
         { name: "Shan Zheng", url: "http://jgxy.tju.edu.cn/info/1014/5126.htm" },
+      ],
+    },
+   {
+      title: "Teacher Market Competition and the Development of Human Capital",
+      url: "",
+      status: "sole-authored",
+      coauthors: [
       ],
     },
   ],
