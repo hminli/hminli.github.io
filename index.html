@@ -45,9 +45,9 @@
 <script src="data.js"></script>
 <script>
   const i = SITE_DATA.info;
-  document.getElementById('page-title').textContent = i.name_en + ' (' + i.name_zh + ')';
+  document.getElementById('page-title').textContent = i.name_en;
   document.getElementById('nav').innerHTML =
-    '<a href="index.html" class="nav-name">' + i.name_en + ' (' + i.name_zh + ')</a>' +
+    '<a href="index.html" class="nav-name">' + i.name_en + ' ' + i.name_zh + '</a>' +
     '<a href="index.html" class="active">Home</a>' +
     '<a href="research.html">Research</a>' +
     '<a href="cv.html">CV</a>';
