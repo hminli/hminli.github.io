@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title id="page-title"></title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+    :root { --black:#1a1a1a; --gray:#555; --light-gray:#999; --border:#ddd; --bg:#fafaf8; --link:#2a5db0; }
+    body { font-family:'EB Garamond',Georgia,serif; font-size:17px; line-height:1.75; color:var(--black); background:var(--bg); max-width:760px; margin:0 auto; padding:0 32px; }
+    nav { display:flex; align-items:baseline; gap:28px; padding:40px 0 36px; border-bottom:1px solid var(--border); margin-bottom:52px; }
+    .nav-name { font-size:18px; font-weight:500; margin-right:auto; color:var(--black); text-decoration:none; }
+    nav a { font-family:'Inter',sans-serif; font-size:13px; font-weight:300; letter-spacing:0.08em; text-transform:uppercase; color:var(--gray); text-decoration:none; transition:color 0.15s; }
+    nav a:hover, nav a.active { color:var(--black); }
+    nav a.active { font-weight:400; }
+    section { margin-bottom:52px; }
+    section h2 { font-family:'EB Garamond',Georgia,serif; font-size:19px; font-weight:600; color:var(--black); margin-bottom:20px; margin-top:0; }
+    .paper { margin-bottom:20px; }
+    .paper-title { font-size:17px; font-weight:500; line-height:1.4; margin-bottom:3px; }
+    .paper-title a { color:var(--black); text-decoration:none; border-bottom:1px solid var(--border); transition:border-color 0.15s, color 0.15s; }
+    .paper-title a:hover { color:var(--link); border-bottom-color:var(--link); }
+    .paper-meta { font-size:15.5px; color:var(--gray); margin-bottom:2px; }
+    .paper-meta a { color:var(--gray); text-decoration:none; border-bottom:1px solid #ccc; transition:color 0.15s; }
+    .paper-meta a:hover { color:var(--link); border-bottom-color:var(--link); }
+    .paper-journal { color:var(--gray); font-size:16px; }
+    .paper-status { font-family:'Inter',sans-serif; font-size:12px; font-weight:300; color:var(--light-gray); margin-top:3px; }
+    footer { margin:60px 0 48px; padding-top:28px; border-top:1px solid var(--border); font-family:'Inter',sans-serif; font-size:12px; color:var(--light-gray); font-weight:300; }
+  </style>
+</head>
+<body>
+<nav id="nav"></nav>
+<div id="content"></div>
+<footer id="footer"></footer>
+<script src="data.js"></script>
+<script>
+  const i = SITE_DATA.info;
+
+  document.getElementById('page-title').textContent = 'Research — ' + i.name_en;
+  document.getElementById('nav').innerHTML =
+    '<a href="index.html" class="nav-name">' + i.name_en + ' (' + i.name_zh + ')</a>' +
+    '<a href="index.html">Home</a>' +
+    '<a href="research.html" class="active">Research</a>' +
+    '<a href="cv.html">CV</a>';
+  document.getElementById('footer').textContent = i.name_en + ' · Last updated ' + i.last_updated;
+
+  function renderCoauthors(coauthors) {
+    return coauthors.map(a => a.url ? '<a href="' + a.url + '" target="_blank">' + a.name + '</a>' : a.name).join(', ');
+  }
+
+  function renderPaper(p) {
+    const title = p.url
+      ? '<a href="' + p.url + '" target="_blank">' + p.title + '</a>'
+      : p.title;
+    const coauth = p.coauthors && p.coauthors.length
+      ? '<div class="paper-meta">with ' + renderCoauthors(p.coauthors) + '</div>' : '';
+    const journal = p.journal
+      ? '<div class="paper-journal">' + p.journal + (p.details ? ', ' + p.details : '') + '</div>' : '';
+    const status = p.status
+      ? '<div class="paper-status">' + p.status + '</div>' : '';
+    return '<div class="paper"><div class="paper-title">' + title + '</div>' + coauth + journal + status + '</div>';
+  }
+
+  function renderSection(title, papers) {
+    if (!papers || !papers.length) return '';
+    return '<section><h2>' + title + '</h2>' + papers.map(renderPaper).join('') + '</section>';
+  }
+
+  document.getElementById('content').innerHTML =
+    renderSection('Selected Working Papers', SITE_DATA.working_papers) +
+    renderSection('Selected Works in Progress', SITE_DATA.wip) +
+    renderSection('Publications', SITE_DATA.publications);
+</script>
+</body>
+</html>
