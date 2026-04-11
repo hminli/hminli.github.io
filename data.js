@@ -20,7 +20,7 @@ const SITE_DATA = {
   bio: [
     "I am a Ph.D. student in Economics at Wuhan University, China, and will be on the job market in 2026–2027."+ 
     "My research lies in environmental economics, labor economics, and development economics."+ 
-    "Specifically, I am interested in two different questions: (i) the effectiveness of water allocation along a river and local behavior (my Ph.D. thesis),"+ 
+    "Specifically, I am interested in two different questions: (i) water allocation along a river and the local response to different types of allocation (my Ph.D. thesis),"+ 
     "and (ii) human capital accumulation in developing countries.",
   ],
 
