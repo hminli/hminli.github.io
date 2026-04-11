@@ -57,7 +57,7 @@
   document.getElementById('contact').innerHTML =
     '<div><strong>Email</strong> &nbsp;&nbsp; ' + i.email + '</div>' +
     '<div><strong>Office</strong> &nbsp; ' + i.department + ', ' + i.university + '</div>' +
-    '<div style="margin-top:10px;"><a href="' + i.cv_pdf + '" target="_blank">Curriculum Vitae</a> &nbsp;·&nbsp; <a href="' + i.google_scholar + '" target="_blank">Google Scholar</a></div>';
+    '<a href="' + i.cv_pdf + '" target="_blank">Curriculum Vitae</a>';
   const img = new Image();
   img.src = 'assets/img/profile-pic.jpg';
   img.alt = i.name_en;
