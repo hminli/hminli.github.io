@@ -18,7 +18,7 @@ const SITE_DATA = {
   // 主页简介 — 每个字符串是一段
   // ============================================================
   bio: [
-    "Welcome! I am a Ph.D. student in Economics at Wuhan University, China, and will expect to be on the job market in the 2026–2027 academic year. My research lies in environmental, labor, and development economics. Specifically, I currently investigate three distinct topics: (i) water allocation along a river and its local responses (my Ph.D. dissertation), (ii) human capital accumulation, and (iii) growth in developing countries.",
+    "Welcome! I am a Ph.D. student in Economics at Wuhan University, China, and will expect to be on the job market in the 2026–2027 academic year. My research lies in environmental, labor, and development economics. Specifically, I currently investigate three topics: (i) water allocation along a river and its local responses (my Ph.D. dissertation), (ii) human capital accumulation, and (iii) growth in developing countries.",
   ],
 
   // ============================================================
