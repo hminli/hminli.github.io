@@ -46,6 +46,16 @@ const SITE_DATA = {
   // status: 投稿状态，如 "Under Review" / "R&R at JDE"，没有则填 ""
   // ============================================================
   working_papers: [
+     {
+      title: "Beyond the Market: Experimenting with Water Allocation Policies in the Yellow River Basin",
+      url: "",
+      coauthors: [
+        { name: "Shihe Fu",    url: "https://ems.whu.edu.cn/info/1680/215401.htm" },
+        { name: "Zhi Luo",    url: "https://ems.whu.edu.cn/info/1680/10590.htm" },
+        { name: "Guanhua Yi", url: "" },
+        { name: "Shan Zheng", url: "http://jgxy.tju.edu.cn/info/1014/5126.htm" },
+      ],
+    },
     {
       title: "Internet Access and Schooling in China",
       url: "",
@@ -73,13 +83,10 @@ const SITE_DATA = {
   // ============================================================
   wip: [
     {
-      title: "Beyond the Market: Experimenting with Water Allocation Policies in the Yellow River Basin",
+      title: "When Water Conservation Backfires: Resource Substitution, Agricultural Expansion, and Environmental Externalities",
       url: "",
       coauthors: [
-        { name: "Shihe Fu",    url: "https://ems.whu.edu.cn/info/1680/215401.htm" },
         { name: "Zhi Luo",    url: "https://ems.whu.edu.cn/info/1680/10590.htm" },
-        { name: "Guanhua Yi", url: "" },
-        { name: "Shan Zheng", url: "http://jgxy.tju.edu.cn/info/1014/5126.htm" },
       ],
     },
    {
@@ -89,37 +96,4 @@ const SITE_DATA = {
       ],
     },
   ],
-
-  // ============================================================
-  // 教育经历 Education
-  // ============================================================
-  education: [
-    { year: "2020 –",        degree: "Ph.D. in Economics",  school: "[University Name]" },
-    { year: "2018 – 2020",   degree: "M.A. in Economics",   school: "[University Name]" },
-    { year: "2014 – 2018",   degree: "B.A. in Economics",   school: "[University Name]" },
-  ],
-
-  // ============================================================
-  // 研究领域
-  // ============================================================
-  fields: {
-    primary:   "Environmental Economics, Labor Economics",
-    secondary: "Development Economics",
-  },
-
-  // ============================================================
-  // 会议和报告 Conferences
-  // ============================================================
-  conferences: [
-    { year: "2024", name: "[Conference Name]", city: "[City]" },
-    { year: "2023", name: "[Conference Name]", city: "[City]" },
-  ],
-
-  // ============================================================
-  // 教学经历 Teaching
-  // ============================================================
-  teaching: [
-    { year: "2023", role: "Teaching Assistant", course: "[Course Name]", school: "[University Name]" },
-  ],
-
 };
