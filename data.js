@@ -11,7 +11,7 @@ const SITE_DATA = {
     university:     "Wuhan University",
     email:          "haominli.ec@gmail.com",
     cv_pdf:         "assets/cv.pdf",
-    last_updated:   "April 2026",
+    last_updated:   "July 2026",
   },
 
   // ============================================================
