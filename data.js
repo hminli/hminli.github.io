@@ -46,16 +46,6 @@ const SITE_DATA = {
   // status: 投稿状态，如 "Under Review" / "R&R at JDE"，没有则填 ""
   // ============================================================
   working_papers: [
-     {
-      title: "Beyond the Market: Experimenting with Water Allocation Policies in the Yellow River Basin",
-      url: "",
-      coauthors: [
-        { name: "Shihe Fu",    url: "https://ems.whu.edu.cn/info/1680/215401.htm" },
-        { name: "Zhi Luo",    url: "https://ems.whu.edu.cn/info/1680/10590.htm" },
-        { name: "Guanhua Yi", url: "" },
-        { name: "Shan Zheng", url: "http://jgxy.tju.edu.cn/info/1014/5126.htm" },
-      ],
-    },
     {
       title: "Internet Access and Schooling in China",
       url: "",
@@ -67,28 +57,12 @@ const SITE_DATA = {
         { name: "Junhui Ma",       url: "" },
       ],
     },
-    {
-      title: "Warriors, Wells, and Wealth",
-      url: "",
-      status: "",
-      coauthors: [
-        { name: "Wentong Sun", url: "https://wentongsun.github.io/" },
-        { name: "Runnan Wang", url: "https://sites.google.com/view/rnwang" },
-      ],
-    },
   ],
 
   // ============================================================
   // Works in Progress
   // ============================================================
   wip: [
-    {
-      title: "When Water Conservation Backfires: Resource Substitution, Agricultural Expansion, and Environmental Externalities",
-      url: "",
-      coauthors: [
-        { name: "Zhi Luo",    url: "https://ems.whu.edu.cn/info/1680/10590.htm" },
-      ],
-    },
    {
       title: "Teacher Market Competition and the Development of Human Capital (sole-authored)",
       url: "",
